@@ -6,17 +6,13 @@
     box-sizing: border-box;
 }
 
-
-.wrap {
-    height: 100vh;
-    background: linear-gradient(45deg, blue,red);
+body{
+    min-height: 100vh;
+    background: linear-gradient(45deg, blue, red);
 }
 
-.login  {
+form {
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     font-family: 'Poppins', sans-serif;
     position: absolute;
     left: 50%;
@@ -27,28 +23,25 @@
 
 }
 
-.login > h1{
+.login>h1 {
     font-weight: 200;
 }
 
 .input {
-    width: 400px;
     padding: 1.5rem;
     font-size: 1.5rem;
-    font-family: 'Sofia Sans Condensed', sans-serif;
 }
 
-.input:focus{
+.input:focus {
     outline: none;
-    transform: translate(2px, -2px);
     border: none;
 }
 
-.input-wrap{
+.input-wrap {
     position: relative;
 }
 
-.enviar{
+.enviar {
     margin: 0 auto;
     background-color: #7cbb48;
     border: none;
@@ -62,42 +55,89 @@
     color: #fff;
 }
 
-.enviar:focus-visible{
+.enviar:focus-visible {
     background-color: rgb(238, 238, 238);
     outline: none;
     box-shadow: 4px 4px 5px rgb(0, 195, 255);
 
 }
 
-.enviar:active{
+.enviar:active {
     transform: translate(2px, -2px);
 }
 
 
 /* ;;;;;;;;;;;;;;;;;;;;;;;;;;;///////////////////////////////////////////////// */
 
-
-.label-cadastro{
-
+.cadastro {
+    width: 450px;
 }
 
-.input-cadastro{
+
+.input-box input {
     font-size: 1rem;
-    padding: .5rem;
+    padding: .2rem;
     font-family: 'Sofia Sans Condensed', sans-serif;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    width: 100%;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 1px;
 }
 
 
-form h1{
+form h1 {
     font-weight: 200;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
 }
 
-.radio{
+.input-box {
+    position: relative;
+}
 
+.cadastro-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: 400ms;
+}
+
+
+.input-cadastro ~.cadastro-label{
+    top: -15px;
+    font-size: 12px;
+}
+
+.input-data {
+    color: #222;
+    background-color: #fff;
+    padding: .5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.input-box.erro .input-cadastro{
+    border-color: rgb(255, 159, 159);
+}
+
+#erro{
+    font-weight: 200;
+    margin-top: 4px;
+    font-size: 11px;
+    color: rgb(255, 196, 196);
+}
+
+.input-box.sucesso .input-cadastro{
+    border-color: #7cbb48;
 }

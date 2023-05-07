@@ -1,0 +1,65 @@
+body{
+    height: 100vh;
+    background: linear-gradient(45deg, blue, red);
+}
+
+.login {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: rem;
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    color: #fff;
+
+}
+
+input {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+
+}
+
+.input-control{
+    margin-bottom: 1.5rem;
+}
+
+.enviarBtn{
+    margin: 0 auto;
+    background-color: #7cbb48;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    transition: 200ms;
+    color: #fff;
+    outline: none;
+}
+
+
+.enviarBtn:active {
+    transform: translate(2px, -2px);
+}
+
+
+#erro{
+    margin-top: 4px;
+    font-size: 11px;
+    color: rgb(255, 196, 196);
+}
+
+.input-control.erro input{
+    border-bottom: 3px solid rgb(255, 61, 61);
+}

@@ -5,16 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tela de Login</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <div class="wrap">
-      <div class="login">
-        <h1>Login</h1>
-        <input type="text" placeholder="Nome" class="input" />
-        <input type="password" placeholder="Senha" class="input" />
-        <button class="enviar">Enviar</button>
+    <form id="login-form" class="login">
+      <h1>Login</h1>
+      <div class="input-control">
+        <input 
+        type="text" 
+        id="login-nome"
+        placeholder="Nome" />
+      <div id="erro"></div>
       </div>
-    </div>
+      <div class="input-control">
+        <input 
+        type="password" 
+        id="login-senha"
+        placeholder="Senha" />
+        <div id="erro"></div>
+      </div>
+      <button 
+       type="submit"
+       class="enviarBtn">
+        Enviar
+      </button>
+    </form>
+
+    <script src="login.js"></script>
   </body>
 </html>
