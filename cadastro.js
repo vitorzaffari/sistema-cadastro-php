@@ -9,9 +9,14 @@ verificarPrimeiroInput(emailInput);
 verificarPrimeiroInput(senhaInput);
 verificarPrimeiroInput(senhaConfirmarInput);
 
-formulario.addEventListener("submit", (event) => {
-  validarInputs();
-  event.preventDefault();
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const valido = validarInputs();
+  if (valido) {
+    formulario.submit();
+  } else {
+    console.log(valido);
+  }
 });
 
 function validarInputs() {
@@ -19,6 +24,7 @@ function validarInputs() {
   const emailValue = emailInput.value;
   const senhaValue = senhaInput.value;
   const senhaConfirmarValue = senhaConfirmarInput.value;
+  let valid = true;
 
   console.log(
     "Nome: ",
@@ -33,36 +39,40 @@ function validarInputs() {
 
   if (nomeValue === "") {
     setErro(nomeInput, "O nome é obrigatório");
+    valid = false;
   } else {
     setSucesso(nomeInput);
   }
 
   if (emailValue === "") {
     setErro(emailInput, "O email é obrigatório");
+    valid = false;
   } else if (!emailValidacao(emailValue)) {
     setErro(emailInput, "Email inválido");
+    valid = false;
   } else {
     setSucesso(emailInput);
   }
 
   if (senhaValue === "") {
     setErro(senhaInput, "A senha é obrigatória");
+    valid = false;
   } else if (senhaValue.length < 8) {
     setErro(senhaInput, "A senha deve conter no mínimo 8 caracteres");
+    valid = false;
   } else {
     setSucesso(senhaInput);
   }
   if (senhaConfirmarValue === "") {
     setErro(senhaConfirmarInput, "Por favor confirme sua senha");
+    valid = false;
   } else if (senhaConfirmarValue !== senhaValue) {
     setErro(senhaConfirmarInput, "Por favor, confira sua senha");
+    valid = false;
   } else {
     setSucesso(senhaConfirmarInput);
   }
 
-
-
-  
   nomeInput.addEventListener("input", (event) => {
     if (event.target.value !== "") {
       setSucesso(nomeInput);
@@ -74,6 +84,7 @@ function validarInputs() {
       setSucesso(emailInput);
     } else {
       setErro(emailInput, "Email inválido");
+      valid = false;
     }
   });
 
@@ -82,6 +93,7 @@ function validarInputs() {
       setSucesso(senhaInput);
     } else {
       setErro(senhaInput, "A senha deve conter no mínimo 8 caracteres");
+      valid = false;
     }
     if (
       senhaConfirmarInput.value === event.target.value &&
@@ -90,6 +102,7 @@ function validarInputs() {
       setSucesso(senhaConfirmarInput);
     } else {
       setErro(senhaConfirmarInput, "Por favor, confira sua senha");
+      valid = false;
     }
   });
   senhaConfirmarInput.addEventListener("input", (event) => {
@@ -102,8 +115,10 @@ function validarInputs() {
       setSucesso(senhaConfirmarInput);
     } else {
       setErro(senhaConfirmarInput, "Por favor, confira sua senha");
+      valid = false;
     }
   });
+  return valid;
 }
 
 function setErro(elemento, mensagem) {

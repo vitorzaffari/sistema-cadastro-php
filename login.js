@@ -3,26 +3,35 @@ const senhaInput = document.getElementById('login-senha')
 const formulario = document.getElementById('login-form')
 
 
-formulario.addEventListener('submit', (event) => {
-    event.preventDefault();
-    validarInputs();
+formulario.addEventListener('submit', (e) => {
+    e.preventDefault();
+   const valido = validarInputs();
+    if(valido){
+        formulario.submit();
+    } else {
+        console.log(valido);
+    }
 })
 
 function validarInputs(){
     const nomeValue = nomeInput.value.trim()
     const senhaValue = senhaInput.value.trim()
-
+    let valid = true
     if(nomeValue === '') {
         setErro(nomeInput, "O nome é obrigatório");
+        valid = false
     } else {
         setSucesso(nomeInput);
     }
 
     if(senhaValue === '') {
         setErro(senhaInput, "A senha é obrigatória");
+        valid = false
+
     } else {
         setSucesso(senhaInput);
     }
+    return valid
 }
 
 

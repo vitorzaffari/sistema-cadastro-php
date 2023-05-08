@@ -1,3 +1,14 @@
+<?php
+
+if (!empty($_POST['nome']) && !empty($_POST['senha'])) {
+  print_r($_POST['nome']);
+  print_r($_POST['senha']);
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,10 +19,11 @@
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <form id="login-form" class="login">
+    <form  action="login.php" method="POST" id="login-form" class="login">
       <h1>Login</h1>
       <div class="input-control">
         <input 
+        name="nome"
         type="text" 
         id="login-nome"
         placeholder="Nome" />
@@ -19,6 +31,7 @@
       </div>
       <div class="input-control">
         <input 
+        name="senha"
         type="password" 
         id="login-senha"
         placeholder="Senha" />
