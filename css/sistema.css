@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&family=Sofia+Sans+Condensed:wght@200&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: #fff;
+    min-height: 100vh;
+    background: linear-gradient(45deg, blue, red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+
+}
+
+
+.voltar{
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+}
+.sair{
+    color: lightcoral;
+}

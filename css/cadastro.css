@@ -10,7 +10,12 @@ body{
     min-height: 100vh;
     background: linear-gradient(45deg, blue, red);
 }
-
+.voltar{
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+    font-family: 'Poppins';
+}
 form {
     padding: 2rem;
     font-family: 'Poppins', sans-serif;

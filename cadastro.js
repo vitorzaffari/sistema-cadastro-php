@@ -106,7 +106,6 @@ function validarInputs() {
     }
   });
   senhaConfirmarInput.addEventListener("input", (event) => {
-    // console.log(senhaInput.value);
 
     if (
       event.target.value.length >= 8 &&
