@@ -14,14 +14,14 @@ if (!empty($_POST['nome']) && !empty($_POST['senha'])) {
     if (mysqli_num_rows($result) < 1) {
         unset($_SESSION['nome']);
         unset($_SESSION['senha']);
-        header('Location: login.php');
+        header('Location: ../pages/login.php');
     } else {
         $_SESSION['nome'] = $nome;
         $_SESSION['senha'] = $senha;
 
-        header('Location: sistema.php');
+        header('Location: ../pages/sistema.php');
     }
 } else {
-    header('Location: login.php');
+    header('Location: ../pages/login.php');
 }
 ?>

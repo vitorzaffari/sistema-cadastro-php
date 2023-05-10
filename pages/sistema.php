@@ -18,12 +18,12 @@ $logado = $_SESSION['nome'];
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./css/sistema.css">
+  <link rel="stylesheet" href="../css/sistema.css">
 </head>
 
 <body>
   <a href="home.php" class='voltar'>Voltar</a>
-  <a href="sair.php" class='voltar sair'>Sair da sessão</a>
+  <a href="../config/sair.php" class='voltar sair'>Sair da sessão</a>
 
   <?php
   echo "<h1>Bem vindo ao sistema  $logado </h1>";

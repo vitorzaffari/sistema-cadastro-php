@@ -26,7 +26,7 @@ if (!empty($_POST['nome']) && !empty($_POST['senha']) && !empty($_POST['email'])
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tela de Cadastro</title>
-  <link rel="stylesheet" href="./css/cadastro.css" />
+  <link rel="stylesheet" href="../css/cadastro.css" />
 </head>
 
 <body>
@@ -73,7 +73,7 @@ if (!empty($_POST['nome']) && !empty($_POST['senha']) && !empty($_POST['email'])
     <input class="enviar" type="submit" value="Enviar" />
 
   </form>
-  <script src="./cadastro.js"></script>
+  <script src="../cadastro.js"></script>
 </body>
 
 </html>
